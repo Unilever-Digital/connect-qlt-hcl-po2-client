@@ -1,2 +1,1 @@
-# connect-qlt-hcl-po2-client
-local app
+# connection-qlt-pcl-client
