@@ -3,7 +3,7 @@ import time
 from datetime import datetime as dt
 from app.controls.control import *
 
-def queryOptimizationCheckweigher(table):
+def optimizationQueryCheckweigher(table):
     """
     counter bottles server
     """
@@ -61,7 +61,7 @@ def queryOptimizationCheckweigher(table):
     collection.insert_many(data_insert)
     connection.close()
 
-def queryOptimizationImageFail(table):
+def optimizationQueryImageFail(table):
     """
     counter bottles server
     """
@@ -119,7 +119,7 @@ def queryOptimizationImageFail(table):
     collection.insert_many(data_insert)
     connection.close()
 
-def queryOptimizationOperating(table):
+def optimizationQueryOperating(table):
     """
     counter bottles server
     """
@@ -181,7 +181,7 @@ def queryOptimizationOperating(table):
     collection.insert_many(data_insert)
     connection.close()
 
-def queryOptimizationProduct(table):
+def optimizationQueryProduct(table):
     """
     counter bottles server
     """
@@ -238,7 +238,7 @@ def queryOptimizationProduct(table):
     collection.insert_many(data_insert)
     connection.close()
 
-def queryOptimizationResultCarton(table):
+def optimizationQueryResultCarton(table):
     """
     result carton
     """
@@ -292,7 +292,7 @@ def queryOptimizationResultCarton(table):
     collection.insert_many(data_insert)
     connection.close()
 
-def queryOptimizationResultDataman(table):
+def optimizationQueryResultDataman(table):
     """
     result dataman
     """
@@ -347,9 +347,9 @@ def queryOptimizationResultDataman(table):
     connection.close()
     
 def querySqlServer():
-    queryOptimizationCheckweigher("Table_Checkweigher") ## done
-    queryOptimizationImageFail("Table_ImageFail") ## done
-    #queryOptimizationOperating("Table_Operating")
-    #queryOptimizationProduct("Table_Product")
-    queryOptimizationResultCarton("Table_ResultCarton") ## done
-    queryOptimizationResultDataman("Table_ResultDataman")
+    optimizationQueryCheckweigher("Table_Checkweigher") ## done
+    optimizationQueryImageFail("Table_ImageFail") ## done
+    #optimizationQueryOperating("Table_Operating")
+    #optimizationQueryProduct("Table_Product")
+    optimizationQueryResultCarton("Table_ResultCarton") ## done
+    optimizationQueryResultDataman("Table_ResultDataman")
