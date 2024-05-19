@@ -56,7 +56,6 @@ def optimizationQueryCheckweigher(table):
             "countNotgood": row[12],
         }
         data_insert.append(new_row)
-    print(data_insert)
 
     collection.insert_many(data_insert)
     connection.close()
