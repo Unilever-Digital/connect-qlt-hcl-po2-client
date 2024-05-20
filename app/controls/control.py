@@ -2,7 +2,6 @@ import pyodbc
 import json
 import pymongo
 
-
 def connectToSqlServer(server, database):
     """
     Connect to local SQL Server database using Windows Authentication
