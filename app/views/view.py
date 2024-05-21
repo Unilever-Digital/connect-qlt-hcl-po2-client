@@ -6,6 +6,9 @@ import time
 
 # Function to run the query periodically
 def run_task_schedule():
+    """_summary_
+    run task while UI exist
+    """
     while True:
         try:
             querySqlServer()
@@ -17,12 +20,15 @@ def run_task_schedule():
             
 # Function to stop the background task
 def stop_task():
+    """_summary_
+    top task when click event close ui
+    """
     global background_thread
     if background_thread:
         background_thread.cancel()
 
 def homeViewQT():
-    """
+    """_summary_
     desktop view
     """
     from app.templates.index import HomeApp
@@ -30,5 +36,5 @@ def homeViewQT():
     root.protocol("WM_DESTROY", stop_task)
     root.mainloop()
 
-# pyinstaller --onefile --hidden-import schedule --hidden-import pyodbc --hidden-import openpyxl --hidden-import pymongo --hidden-import threading --hidden-import pymssql --hidden-import datetime main.py
+# pyinstaller --onefile --hidden-import schedule --hidden-import pyodbc --hidden-import openpyxl --hidden-import pymongo --hidden-import threading --hidden-import pymssql --hidden-import datetime --hidden-import pillow --hidden-import cairosvg main.py
 
