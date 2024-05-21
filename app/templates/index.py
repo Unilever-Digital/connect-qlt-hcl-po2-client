@@ -1,11 +1,6 @@
 import tkinter as tk
 from tkinter import messagebox
-
-# pip install pillow svglib reportlab
 from PIL import Image, ImageTk
-import cairosvg
-import io
-
 
 class HomeApp(tk.Tk):
     def __init__(self):
@@ -19,8 +14,8 @@ class HomeApp(tk.Tk):
         self.init_ui()
 
     def init_ui(self):
-        # Load and display the SVG logo
-        self.load_svg_logo("app/static/images/logo.svg")
+        # Load and display the PNG logo
+        self.load_png_logo("app/static/images/logo.png")
 
         # Create the main title label
         self.label_background = tk.Label(self, text="Quality server")
@@ -38,19 +33,14 @@ class HomeApp(tk.Tk):
         self.grid_columnconfigure(0, weight=1)
         self.grid_columnconfigure(1, weight=1)
 
-    def load_svg_logo(self, svg_path):
-        # Convert SVG to PNG using cairosvg
-        png_data = cairosvg.svg2png(url=svg_path)
-
-        # Create an in-memory binary stream from the PNG data
-        png_stream = io.BytesIO(png_data)
-
+    def load_png_logo(self, png_path):
         # Open the PNG image with PIL
-        image = Image.open(png_stream)
+        image = Image.open(png_path)
 
         # Resize the image as needed (optional)
         logo_width, logo_height = 150, 150  # Adjust dimensions as needed
-        image = image.resize((logo_width, logo_height), Image.ANTIALIAS)
+        image = image.resize((logo_width, logo_height),
+                             resample = Image.ADAPTIVE)
 
         # Convert to Tkinter image
         self.logo_image = ImageTk.PhotoImage(image)
@@ -58,13 +48,12 @@ class HomeApp(tk.Tk):
         # Create a label to display the logo
         self.label_logo = tk.Label(self, image=self.logo_image)
         self.label_logo.grid(row=0, column=0, columnspan=2, pady=20)
-        self.label_logo.update_idletasks()
 
         # Center the label
-        self.grid_columnconfigure(0, weight=1)
-        self.grid_columnconfigure(1, weight=1)
+        self.label_logo.grid(row=0, column=0, sticky="nsew")
         self.grid_rowconfigure(0, weight=1)
-        
+        self.grid_columnconfigure(0, weight=1)
+
     def close(self, event=None):
         # Confirmation dialog before closing
         if messagebox.askquestion("Quit?", "Are you sure you want to quit?") == "yes":
