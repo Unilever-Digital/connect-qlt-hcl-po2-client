@@ -333,7 +333,7 @@ def optimizationQueryResultDataman(table):
             "year": row[3],
             "shift": row[4],
             "sku":  row[5],
-            "name": row[6].
+            "name": row[6],
             "line": row[7],
             "count": row[8],
             "countPass": row[9],
