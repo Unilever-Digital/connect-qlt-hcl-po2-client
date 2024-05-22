@@ -1,13 +1,11 @@
 ## connection-qlt-pcl-client:
 Local app for streamming data to PBI
 
-## requirements:
+## Requirements:
   requirements.txt
 
-## app:
+## UI:
 <img width="600" alt="Screenshot 2024-05-21 at 20 57 59" src="https://github.com/Unilever-Digital/connect-qlt-hcl-po2-client/assets/93373784/5501a1c9-937d-4fae-8912-79f461bb29e6">
-
-## Build:
 
 ### Virual environment
 
@@ -15,8 +13,17 @@ Local app for streamming data to PBI
   - source venv/bin/activate  # Activate the virtual environment (for Unix-based systems)
   - pip install -r requirements.txt
   
-### pyinstaller 
+### Build
   - pyinstaller --onefile main.py
+
+### Contributing
+Unilever Digital team
+
+### License
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+### Contact
+For further information or support, please contact the project maintainer: Le-chon-minh.dat@unilever.com
 
 
   
