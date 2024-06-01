@@ -36,15 +36,15 @@ Local app for streamming data to PBI. Vision Quality SQL Data in line Posimat2.
 
 ### Virual environment
 
-    - python -m venv venv
+    python -m venv venv
 
-    - source venv/bin/activate  # Activate the virtual environment (for Unix-based systems)
+    source venv/bin/activate  # Activate the virtual environment (for Unix-based systems)
 
-    - pip install -r requirements.txt
+    pip install -r requirements.txt
   
 ### Build
 
-    - pyinstaller --onefile main.py
+    pyinstaller --onefile main.py
 
 ### Contributing
 Unilever Digital team
